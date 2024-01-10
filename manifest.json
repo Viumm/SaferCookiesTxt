@@ -1,0 +1,35 @@
+{
+   "action": {
+      "default_icon": {
+         "16": "images/icon16.png",
+         "24": "images/icon24.png",
+         "32": "images/icon32.png"
+      },
+      "default_popup": "app.html",
+      "default_title": "Safer Cookies.txt"
+   },
+   "background": {
+      "service_worker": "js/app.js"
+   },
+   "content_scripts": [ {
+      "js": [ "js/contentScript.js" ],
+      "matches": [ "http://*/*", "https://*/*" ]
+   } ],
+   "content_security_policy": {
+      "extension_pages": "script-src 'self'; object-src 'self'"
+   },
+   "description": "Exports your cookies to the Netscape cookie file format a.k.a. cookies.txt which is compatible with wget, curl, youtube-dl and more.",
+   "host_permissions": [ "http://*/*", "https://*/*" ],
+   "icons": {
+      "128": "images/icon128.png",
+      "16": "images/icon16.png",
+      "48": "images/icon48.png"
+   },
+   "incognito": "split",
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAntTCmco6IlvAHAJ2VT/sv+zjEktzUmlxczPOZ3f0o8qPjX0NbtNiAJdXT+5LU3WYFrIph4eNdtL4nVzCO1ptLdly85MYk3vAdvOCBHotTPjaBu4GoxmBzChEMWiULBB60uewJYXhoB27jEconn3kULhbatOkR/DU8s7dYW/XtFMzfPacY0NVxHU7N26bK0Hf+pig+mbMf4KPOEgDhsJVMeuoCbccKSl+wdoDxmd04RhS4g+Ca2iyN/4DEmuEsWuOFX5CgbsZ0T6AvDVjY91t/FJrIu/guDx4zZKUEXG95DNb3LLz3KRAwa2I9ddsfMlgA6ST+Fj3lHv4lRv8RTA3RQIDAQAB",
+   "manifest_version": 3,
+   "name": "SaferCookies.txt",
+   "permissions": [ "cookies", "tabs", "webNavigation", "downloads", "contextMenus" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.0"
+}
